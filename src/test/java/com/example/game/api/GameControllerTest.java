@@ -45,7 +45,7 @@ public class GameControllerTest {
     @Test
     @Order(3)
     void testGetStatistics() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/game/1/statistics"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/game/1"))
                 .andExpect(status().isOk())
                 .andExpect( jsonPath("[0].humanMove", is(Figure.PAPER.toString())));
     }
@@ -53,7 +53,7 @@ public class GameControllerTest {
     @Test
     @Order(3)
     void testCompleteGame() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/game/1/complete"))
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/game/1/complete"))
                 .andExpect(status().isOk())
                 .andExpect( content().string(is("ok")));
     }

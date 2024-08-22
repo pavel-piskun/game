@@ -3,7 +3,6 @@ package com.example.game.repository.entity;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 @Entity(name = "game")
 public class Game {
