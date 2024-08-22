@@ -1,2 +1,8 @@
-# game
-API for Rock, Paper, Scissors game
+# Game: Rock, Paper, Scissors
+
+### How to run
+
+### Endpoints
+
+
+### Additional Links

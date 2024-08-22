@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "931d2b46-d458-49b5-bdb3-70ba87cf1a5c",
+		"name": "Test Game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6378723",
+		"_collection_link": "https://lunar-star-773877.postman.co/workspace/My-Workspace~fc46cdc9-5903-4c84-8207-cba95c1ee7ba/collection/6378723-931d2b46-d458-49b5-bdb3-70ba87cf1a5c?action=share&source=collection_link&creator=6378723"
+	},
+	"item": [
+		{
+			"name": "Create Game",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Make move",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get statistics",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Game",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
