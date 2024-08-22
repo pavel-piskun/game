@@ -1,6 +1,10 @@
 # Game: Rock, Paper, Scissors
 It's a web application that you can run locally or deploy wherever you want.
 
+Please execute command to run it locally:
+   ```bash
+   ./gradlew build  bootRun
+   ```
 To store statistics it is using H2 in memory DB.
 ### How to play
 1. Create a game
