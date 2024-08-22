@@ -43,6 +43,15 @@ public class GameControllerTest {
     }
 
     @Test
+    @Order(2)
+    void testMakeWrongMove() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/game/1/play")
+                        .content("TEST")
+                        .contentType(MediaType.TEXT_PLAIN))
+                .andExpect(status().is(HttpStatus.BAD_REQUEST.value()));
+    }
+
+    @Test
     @Order(3)
     void testGetStatistics() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/game/1"))

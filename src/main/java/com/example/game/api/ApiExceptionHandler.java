@@ -2,6 +2,7 @@ package com.example.game.api;
 
 import com.example.game.api.model.exception.GameCompletedException;
 import com.example.game.api.model.exception.GameNotFoundException;
+import com.example.game.api.model.exception.UnknownFigureException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value
-            = {GameCompletedException.class})
+            = {GameCompletedException.class, UnknownFigureException.class})
     protected ResponseEntity<Object> handleGameCompleted(
             RuntimeException ex, WebRequest request) {
         return new ResponseEntity<>(ex.getMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST);

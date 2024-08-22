@@ -30,13 +30,13 @@ public class GameServiceTest {
     void testMakeMove() {
         Mockito.when(robotService.makeMove()).thenReturn(Figure.PAPER);
         Mockito.when(gameRepository.findById(Mockito.any())).thenReturn(Optional.of(new Game()));
-        MoveResult result = gameService.makeMove(1L, Figure.PAPER);
+        MoveResult result = gameService.makeMove(1L, Figure.PAPER.name());
         assertNotNull(result);
         assertEquals(WhoWin.TIE, result.getWhoWin());
-        result = gameService.makeMove(1L, Figure.SCISSORS);
+        result = gameService.makeMove(1L, Figure.SCISSORS.name());
         assertNotNull(result);
         assertEquals(WhoWin.HUMAN, result.getWhoWin());
-        result = gameService.makeMove(1L, Figure.ROCK);
+        result = gameService.makeMove(1L, Figure.ROCK.name());
         assertNotNull(result);
         assertEquals(WhoWin.ROBOT, result.getWhoWin());
     }

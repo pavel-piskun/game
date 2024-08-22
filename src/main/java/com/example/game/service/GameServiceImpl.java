@@ -5,6 +5,7 @@ import com.example.game.api.model.MoveResult;
 import com.example.game.api.model.WhoWin;
 import com.example.game.api.model.exception.GameCompletedException;
 import com.example.game.api.model.exception.GameNotFoundException;
+import com.example.game.api.model.exception.UnknownFigureException;
 import com.example.game.mapper.MoveMapper;
 import com.example.game.repository.GameRepository;
 import com.example.game.repository.entity.Game;
@@ -35,7 +36,13 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public MoveResult makeMove(Long gameId, Figure humanFigure) {
+    public MoveResult makeMove(Long gameId, String humanInput) {
+        Figure humanFigure;
+        try {
+            humanFigure = Figure.valueOf(humanInput);
+        } catch (IllegalArgumentException ex) {
+            throw new UnknownFigureException();
+        }
         Game game = gameRepository.findById(gameId).orElseThrow(GameNotFoundException::new);
         if (GameStatus.CLOSED.equals(game.getStatus())) {
             throw new GameCompletedException();
