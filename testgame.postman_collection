@@ -10,16 +10,51 @@
 		{
 			"name": "Create Game",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/game",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"game"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Make move",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "PAPER",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/game/1/play",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"game",
+						"1",
+						"play"
+					]
+				}
 			},
 			"response": []
 		},
@@ -27,15 +62,42 @@
 			"name": "Get statistics",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/game/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"game",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Complete Game",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/game/1/complete",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"game",
+						"1",
+						"complete"
+					]
+				}
 			},
 			"response": []
 		}
